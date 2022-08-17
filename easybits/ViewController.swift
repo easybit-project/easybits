@@ -15,5 +15,10 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func login(_ sender: UIButton) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "StartViewController") else {return}
+                
+                self.present(nextVC, animated: true)
+    }
 }
 
