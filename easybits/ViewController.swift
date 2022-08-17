@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "StartViewController") else {return}
                 
                 self.present(nextVC, animated: true)
+        ///
     }
 }
 
