@@ -1,14 +1,20 @@
-//
-//  ViewController.swift
-//  easybits
-//
-//  Created by 양희원 on 2022/08/17.
-//
+
 
 import UIKit
+import SwiftJWT
+import Alamofire
+var VM = ViewModel()
+struct Payload: Claims {
+    let access_key: String
+    let nonce: String
+    let query_hash: String
+    let query_hash_alg: String
+}
+
 
 class ViewController: UIViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -16,9 +22,9 @@ class ViewController: UIViewController {
 
 
     @IBAction func login(_ sender: UIButton) {
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "StartViewController") else {return}
-                
-                self.present(nextVC, animated: true)
+        
+        VM.getAccounts()
+
     }
 }
 
